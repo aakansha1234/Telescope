@@ -32,7 +32,7 @@ The project is structured as a mixed Solidity, Circom, and Typescript workspace.
 ```
 ├── circuits  // <-- Circom source code
 ├── contracts // <-- Solidity source code
-├── scripts   // <-- Block header & proof generation utils
+├── scripts   // <-- Utils for proof generation
 ```
 
 To run Solidity tests:
@@ -42,3 +42,7 @@ cd contracts
 forge test
 ```
 
+### Attestation contract deployments
+- Scroll: https://blockscout.scroll.io/address/0x117620c5C1223d1378cE7FD0EEd067045A8F079B
+- Optimism: https://optimistic.etherscan.io/address/0x056e1e4fef6066087b71c3669D9255C2D9AAcD0d
+- Gnosis chiado: https://blockscout.com/gnosis/chiado/address/0x056e1e4fef6066087b71c3669D9255C2D9AAcD0d
