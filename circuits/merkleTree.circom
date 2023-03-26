@@ -71,7 +71,6 @@ template CommitmentHasher() {
     nullifierHash <== nullifierHasher.out;
 }
 
-// template WithdrawFromSubset(levels) {
 template MerkleTree(levels) {
     // public
     signal input root;

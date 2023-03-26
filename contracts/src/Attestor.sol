@@ -4,6 +4,8 @@ pragma solidity ^0.8.10;
 import "solmate/auth/Owned.sol";
 import "./verifiers/merkleTree_verifier.sol";
 import "./MerkleTree.sol";
+import "forge-std/Test.sol";
+
 
 contract Attestor is MerkleTree, Owned, Verifier {
 
@@ -17,7 +19,7 @@ contract Attestor is MerkleTree, Owned, Verifier {
     error InvalidZKProof();
     error UnknownRoot();
 
-    uint public constant ZERO = uint(keccak256(abi.encodePacked("zero"))) % snark_scalar_field - 1;
+    uint public constant ZERO = uint(keccak256(abi.encodePacked("zero"))) % snark_scalar_field;
 
     constructor(address poseidon, address _owner) MerkleTree(poseidon, ZERO) Owned(_owner) {}
 

@@ -38,11 +38,6 @@ contract MerkleTreeTest is Test {
         uint256(bytes32(hex"0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e1496"))
     ];
 
-    // Proof metadata.
-    uint256 proofBlockNumber = 8150160;
-    bytes32 proofBlockHash = 0xc969efdc289aae38768a8af51efc35874ad8568616f075a0586413be6fbe4a55;
-    bytes32 proofParentHash = 0x520b428fd894e5cdc8b437aa6cd3b39c6bf10bda6800cf5b404cfdc23c454354;
-
     /*//////////////////////////////////////////////////////////////
                                   SETUP
     //////////////////////////////////////////////////////////////*/
@@ -58,6 +53,17 @@ contract MerkleTreeTest is Test {
         hasher = attestor.hasher();
     }
 
+    function testConsole() public {
+        console.log('init root', attestor.getLatestRoot());
+        vm.startPrank(0x5C025775Fb7E7d03915fD3b641bc0Fef099CD456);
+        uint commitmentHash = 20121148293286773060514812271585227728071400915992996996171473146102414573347;
+        console.log('attestor', uint(uint160(0x5C025775Fb7E7d03915fD3b641bc0Fef099CD456)));
+        (uint index, uint leaf) = attestor.attest(commitmentHash);
+        console.log('leaf', leaf);
+        console.log('post root', attestor.getLatestRoot());
+        assertEq(index, 0);
+    }
+
     function testInsertAndVerify() public {
         uint[2] memory commitment = [uint(1), uint(2)];
         uint commitmentHash = hasher.poseidon(commitment);
@@ -69,6 +75,8 @@ contract MerkleTreeTest is Test {
         commitment[0] = commitmentHash;
         commitment[1] = uint(uint160(address(this)));
         // console.log(commitment[1]);
+        console.log("opg");
+        console.log(uint(uint160(0x5555Ad4A6cDee69CeB8a7098138C9cFf710cB610)));
         assertEq(leaf, hasher.poseidon(commitment));
         console.log(attestor.getLatestRoot());
         console.log(attestor.ZERO());

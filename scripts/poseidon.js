@@ -1,4 +1,4 @@
-const { poseidonContract } = require('circomlibjs');
+import { poseidonContract } from 'circomlibjs';
 const abi = poseidonContract.generateABI(2);
 const bytecode = poseidonContract.createCode(2);
 
