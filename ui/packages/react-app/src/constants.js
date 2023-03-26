@@ -39,6 +39,20 @@ export const NETWORKS = {
     rpcUrl: "https://alpha-rpc.scroll.io/l2",
     blockExplorer: "https://blockscout.scroll.io",
   },
+  polyzkevm: {
+    name: "polyzkevm",
+    color: "#ff8b9e",
+    chainId: 1442,
+    rpcUrl: "https://rpc.public.zkevm-test.net/",
+    blockExplorer: "https://explorer.public.zkevm-test.net/",
+  },
+  taiko: {
+    name: "taiko",
+    color: "#ff8b9e",
+    chainId: 167004,
+    rpcUrl: " https://rpc.a2.taiko.xyz",
+    blockExplorer: "https://explorer.a2.taiko.xyz/",
+  },
   goerli: {
     name: "goerli",
     color: "#0975F6",
