@@ -46,3 +46,4 @@ forge test
 - Scroll: https://blockscout.scroll.io/address/0x117620c5C1223d1378cE7FD0EEd067045A8F079B
 - Optimism: https://optimistic.etherscan.io/address/0x056e1e4fef6066087b71c3669D9255C2D9AAcD0d
 - Gnosis chiado: https://blockscout.com/gnosis/chiado/address/0x056e1e4fef6066087b71c3669D9255C2D9AAcD0d
+- Taiko: https://explorer.a2.taiko.xyz/address/0x117620c5C1223d1378cE7FD0EEd067045A8F079B
